@@ -1,0 +1,1348 @@
+Delivered-To: kolarp3003@gmail.com
+Received: by 2002:a05:7108:5b04:b0:497:9b44:6c4 with SMTP id hp4csp8685555gdb;
+        Tue, 21 Oct 2025 07:53:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEmRe0ltzU8YGgYOPVe3sUmPO0gPRn/dhtX2FE6z/l5/WfYmzvPq6lJhB9S4nY3N32sYFrk
+X-Received: by 2002:a05:6a21:3382:b0:32b:7255:632 with SMTP id adf61e73a8af0-334a864a351mr24338829637.52.1761058398992;
+        Tue, 21 Oct 2025 07:53:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1761058398; cv=none;
+        d=google.com; s=arc-20240605;
+        b=d7h5DiG3/gvSCDUcxLgPvBhx3pWBao9/DDc0aBbWuuOYWeK8GRnSdpSQQIdzO3hBa2
+         RtQIuGM4426uw8X/aY1P9t57056shuPoSqcVwKmdDb8XVubz6TVxIOrwGwaRKOODYt/I
+         DD6Y4xbt/PTR1UdOgnzWWoG786W+6vFEoLGQLvTBKv8LBnzFoI6n3+xf1uMhwnMzEYq8
+         bAY8fxdZTPQ8eSHLqLCzBLq8fN64sskCgbC6CxylbDyTxGXdMSqYyTMBUVt7Rj/MtTFS
+         BaO3mznp9QrNMY7EiJp9iBnm8wfgZJjQt2y8luGlX67lMu+Kt4MChy4aeo1A4Hlb60t/
+         /3Vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=unique-id:feedback-id:accept:format:charset:mime-version:subject:to
+         :from:message-id:date:dkim-signature;
+        bh=Ajl91TzXvOuj4yARrsrkclqaVu6qOUYn4AxaFzvpk64=;
+        fh=7UvFs9IHePopT+k2yevZrjdFhQhARU1tpwrNzNoJAI8=;
+        b=Z581D7bdwj1UD7Z812wA9Cpumtr1JO6iCLCMnuOwwLyMrF7uc88CouTEE/m+WaVJBI
+         IDeKEW6X61YSpwCL+HLbphbAoMgBaT6wWf17+iatU0oLiut9x7uTLZJLhpHwk/8cwmQ3
+         VjrV003WDgxt9iwmNCkwrFlXfM36C7MDSSXFTkDs+HmWFORrBov6zVWYvLHPH6lx2QM6
+         kLwYMseKhnqiFQMdTkoSS/52t1TK/a5K21zdJfDKWwY5AdcYrdAJKmyYNxs9FBxoArnm
+         sxorc+eu6+ijdRrXnT++6f0hguXKGRhcC2ql2p7n+0itDWeg8/nPhv4dEJY/2LB5MgVZ
+         A2Ig==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@naukri.com header.s=2015 header.b=rsv81Kf0;
+       spf=pass (google.com: domain of info@naukri.com designates 103.214.115.215 as permitted sender) smtp.mailfrom=info@naukri.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=naukri.com
+Return-Path: <info@naukri.com>
+Received: from nmail-one03-two14-one15-two15.naukri.com (nmail-one03-two14-one15-two15.naukri.com. [103.214.115.215])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-7a23013c2ecsi6362162b3a.957.2025.10.21.07.53.17
+        for <kolarp3003@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 21 Oct 2025 07:53:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info@naukri.com designates 103.214.115.215 as permitted sender) client-ip=103.214.115.215;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@naukri.com header.s=2015 header.b=rsv81Kf0;
+       spf=pass (google.com: domain of info@naukri.com designates 103.214.115.215 as permitted sender) smtp.mailfrom=info@naukri.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=naukri.com
+Return-Path: <info@naukri.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=naukri.com; s=2015; t=1761058390; bh=cGl7w/ImBHL/BZTWYh2UHu/l07fNK3lMhNKs9T2xOyc=; h=Date:From:To:Subject; b=rsv81Kf0PvRvKqUOArNdAR095zu3Ci4FXpPtgKJ6sAdWGLO1GFWMb/veaFU1PQuj6
+	 yJEzmi6YJghdA/0sLzP8YODysxmx8HOUZs1CSL0wJyyS8H2wIVdF/GJWSiEbu0h2le
+	 P+Ssvh98NFpK6RBDYw7hn9/oQPXxpxQYnWuMSImU=
+Received: from [172.10.113.189] ([172.10.113.189:14916] helo=n5plnjobweb14.ieil.net) by n5plimla02.ieil.net (envelope-from <info@naukri.com>) (ecelerity 3.6.13.50539 r(Core:3.6.13.0)) with ESMTP id 0B/A6-29713-65E97F86; Tue, 21 Oct 2025 20:23:10 +0530
+Date: Tue, 21 Oct 2025 20:23:10 +0530 (IST)
+Message-ID: <0B.A6.29713.65E97F86@n5plimla02.ieil.net>
+From: Naukri <info@naukri.com>
+To: kolarp3003@gmail.com
+Subject: 1 recruiter(s) expressed interest in your Naukri profile
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----=_Part_3367118_1824497806.1761058390238"
+CharSet: UTF-8
+format: flowed
+accept: application/json
+feedback-id: 1866_rvmchannelaffinity_rvmchannelaffinity_start_1a86_mail:infoedge
+unique-id: 456|x|68f79d367eab8c395b9c1c63|x|68f79e543152f1aacf5b530d|x||x|1
+
+------=_Part_3367118_1824497806.1761058390238
+Content-Type: multipart/alternative; boundary="----=_Part_3367119_2040025596.1761058390238"
+
+------=_Part_3367119_2040025596.1761058390238
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head></head>
+ <body style=3D"background:#eff2f7;"><p style=3D"display:none;">Your Naukri=
+ profile is getting attention from recruiters! Check out which recruiter(s)=
+ showed interest in your profile. Also keep your profile updated to continu=
+e to get noticed by recruiters.</p>
+  <div style=3D"font-size:0.1px;">
+   <img src=3D"https://logs.naukri.com/collectorapi/v1/uba/bulk?data=3D%5B%=
+7B%22widgetSequence%22%3A1%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3=
+A%2268f79d367eab8c395b9c1c638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widg=
+etName%22%3A%5B%22mail-video-profile-parent-wdgt%22%5D%2C%22widgetVersion%2=
+2%3A%22v0%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22%3A=
+%22section-2%22%2C%22actionType%22%3A%22view%22%2C%22encUsername%22%3A%220c=
+32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9=
+794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C%22tenan=
+tId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetView%22%2C%22lang%22%=
+3A%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D%2C%7B%22widgetSeque=
+nce%22%3A1%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab=
+8c395b9c1c638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%5B%=
+22install-app-qr-mail-parent-wdgt%22%5D%2C%22widgetVersion%22%3A%22v0%22%2C=
+%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22%3A%22know-your-wo=
+rth-install-app%22%2C%22actionType%22%3A%22view%22%2C%22encUsername%22%3A%2=
+20c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a=
+8d9794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C%22te=
+nantId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetView%22%2C%22lang%=
+22%3A%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D%2C%7B%22deviceTy=
+pe%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%2=
+21933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%2C%22comm=
+unicationType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22=
+userId%22%3A%22251043871%22%2C%22eventCode%22%3A%221866_rvmchannelaffinity_=
+rvmchannelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820c=
+b5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22m=
+ailType%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%22741038%22%2C%22req=
+uestId%22%3A%2268f79d367eab8c395b9c1c63%22%2C%22appId%22%3A%22456%22%2C%22s=
+egmentId%22%3A%22155070%22%2C%22tenantId%22%3A%221%22%2C%22eventName%22%3A%=
+22communicationOpen%22%2C%22parentActivityId%22%3A%22607252%22%2C%22parentJ=
+ourneyId%22%3A%221866%22%7D%5D" height=3D"0px" width=3D"0px">
+  </div>                                                      =20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0, maximum-scale=3D1.0, user-scalable=3Dno">
+  <title></title>
+  <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com">
+  <link href=3D"https://fonts.googleapis.com/css2?family=3DRoboto:ital,wght=
+@0,400;0,500;0,700;0,900;1,300&amp;display=3Dswap" rel=3D"stylesheet">
+  <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com">
+  <link href=3D"https://fonts.googleapis.com/css2?family=3DRoboto+Slab:wght=
+@700&amp;display=3Dswap" rel=3D"stylesheet">
+  <link href=3D"https://fonts.googleapis.com/css2?family=3DInter:wght@400;5=
+00;600&amp;family=3DRoboto:wght@300;400&amp;display=3Dswap" rel=3D"styleshe=
+et">
+  <style type=3D"text/css">
+@media only screen and (max-width:479px)
+{
+.wrapper{ width:98% !important;}
+.gap{ height:10px !important;}
+.gap1{ height:18px !important;}
+.h1{ font-size:21px !important; line-height:28px !important;}
+.h2{ font-size:15px !important; line-height:20px !important;}
+.h3{ font-size:17px !important; line-height:20px !important;}
+.body_txt{ font-size:12px !important; line-height:18px !important;}
+.mnbd_txt{ font-size:13px !important; line-height:18px !important;}
+.job_nm{ font-size:15px !important; line-height:20px !important;}
+.mnbd_txt_em{font-size:12px !important; line-height:18px !important;}
+}=20
+</style>  =20
+  =20
+    =20
+  <table width=3D"100%" height=3D"100%" border=3D"0" cellspacing=3D"0" bgco=
+lor=3D"#eff2f7" cellpadding=3D"0" align=3D"center" style=3D"border-collapse=
+:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+   <tbody>
+    <tr>
+     <td valign=3D"top" align=3D"center" height=3D"10"></td>
+    </tr>
+    <tr>
+     <td valign=3D"top" align=3D"center" width=3D"600">
+      <table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"max-width:600px; border-collapse:collapse; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; border:1px solid #f0f1f6;">
+       <tbody>
+        <tr>
+         <td width=3D"600" valign=3D"top" align=3D"center" style=3D"max-wid=
+th:600px;" bgcolor=3D"#ffffff">
+          <table width=3D"100%" border=3D"0" align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt;">
+           <tbody>
+            <tr>
+             <td valign=3D"top" align=3D"center" bgcolor=3D"#ffffff" style=
+=3D"border-bottom:1px solid #ECF1F8;">
+              <table width=3D"95%" align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"border-collapse:collapse; mso-table-lspa=
+ce:0pt; mso-table-rspace:0pt;">
+               <tbody>
+                <tr>
+                 <td valign=3D"top" height=3D"24"></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top" align=3D"center">
+                  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">
+                   <tbody>
+                    <tr>
+                     <td valign=3D"middle" align=3D"left">
+                      <table width=3D"105" align=3D"left" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt;">
+                       <tbody>
+                        <tr>
+                         <td height=3D"20" valign=3D"bottom"><a href=3D"htt=
+ps://cm.naukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additionalPa=
+rams%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationId%22%3A=
+%2268f79e543152f1aacf5b530d%22%2C%22clickPosition%22%3A1%2C%22communication=
+Type%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%22=
+%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2=
+C%22eventCode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_start_1a86=
+_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7=
+b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promotion=
+al%22%2C%22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C%2=
+2appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%2260=
+7252%22%2C%22eventName%22%3A%22communicationClick%22%2C%22parentJourneyId%2=
+2%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.naukri.com%2F%3Futm_camp=
+aign%3Drvm-whtcv%26utm_medium%3Demail%26utm_content%3D1866_rvmchannelaffini=
+ty_rvmchannelaffinity_start_1a86%26utm_term%3D741038%26utm_source%3Dmail" t=
+arget=3D"_blank" style=3D"text-decoration:none;"> <img src=3D"https://stati=
+c.naukimg.com/s/0/0/i/new-logos/naukri.png" width=3D"100" alt=3D"naukri.com=
+" border=3D"0" style=3D"font-family:'Roboto', Arial; font-size:13px; text-a=
+lign:left; color:#006ab9;"></a> </td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                     <td valign=3D"middle" align=3D"right">
+                      <table align=3D"right" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;">
+                       <tbody>
+                        <tr>
+                         <td width=3D"48" valign=3D"middle" align=3D"left" =
+style=3D"font-family:'Roboto', Arial, Helvetica, sans-serif; font-size:12px=
+; text-align:left; color:#445578; font-weight:400;"><a href=3D"https://cm.n=
+aukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additionalParams%22%3=
+A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationId%22%3A%2268f79e=
+543152f1aacf5b530d%22%2C%22clickPosition%22%3A2%2C%22communicationType%22%3=
+A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%22%3A%220f3=
+23398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2C%22event=
+Code%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_start_1a86_mail%22%=
+2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee5=
+5f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promotional%22%2C%=
+22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C%22appId%22=
+%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%22607252%22%2=
+C%22eventName%22%3A%22communicationClick%22%2C%22parentJourneyId%22%3A%2218=
+66%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.naukri.com%2Fdurl%2FnEZb%3Futm_ca=
+mpaign%3Drvm-whtcv%26utm_medium%3Demail%26utm_content%3D1866_rvmchannelaffi=
+nity_rvmchannelaffinity_start_1a86%26utm_term%3D741038%26utm_source%3Dmail"=
+ target=3D"_blank" style=3D"color:#445578; text-decoration:none;">Get app</=
+a></td>
+                         <td align=3D"left" valign=3D"middle"> <a href=3D"h=
+ttps://cm.naukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additional=
+Params%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationId%22%=
+3A%2268f79e543152f1aacf5b530d%22%2C%22clickPosition%22%3A3%2C%22communicati=
+onType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%=
+22%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22=
+%2C%22eventCode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_start_1a=
+86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbc=
+f7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promoti=
+onal%22%2C%22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C=
+%22appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%22=
+607252%22%2C%22eventName%22%3A%22communicationClick%22%2C%22parentJourneyId=
+%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.naukri.com%2Fdurl%2FnE=
+Zb%3Futm_campaign%3Drvm-whtcv%26utm_medium%3Demail%26utm_content%3D1866_rvm=
+channelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038%26utm_sou=
+rce%3Dmail" target=3D"_blank"><img src=3D"https://www.ieplads.com/mailers/2=
+022/naukri/23may/images/playstore-icon.png" width=3D"39"></a></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top" height=3D"17"></td>
+                </tr>
+               </tbody>
+              </table> </td>
+            </tr> <!--Changes Start-->
+            <tr>
+             <td align=3D"center" valign=3D"top">
+              <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" sty=
+le=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;=
+">
+               <tbody>
+                <tr>
+                 <td valign=3D"top" align=3D"center">
+                  <table width=3D"100%" align=3D"center" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0pt; =
+mso-table-rspace:0pt;">
+                   <tbody>
+                    <tr>
+                     <td valign=3D"top" align=3D"center">
+                      <table width=3D"100%" align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0=
+pt; mso-table-rspace:0pt;">
+                       <tbody>
+                        <tr>
+                         <td align=3D"center" valign=3D"top" bgcolor=3D"#ff=
+ffff">
+                          <div></div><table width=3D"95%" align=3D"center" =
+cellpadding=3D"0" cellspacing=3D"0">
+                           <tbody>
+                            <tr>
+                             <td height=3D"16"></td>
+                            </tr>
+                            <tr>
+                             <td align=3D"center"><img src=3D"https://www.i=
+eplads.com/mailers/2022/naukri/WHTMA-23aug/images/4banner.png" width=3D"260=
+" alt=3D""></td>
+                            </tr>
+                            <tr>
+                             <td class=3D"gap" height=3D"15"></td>
+                            </tr>
+                            <tr>
+                             <td class=3D"h2" align=3D"center" style=3D"fon=
+t-family:'Roboto', Arial, Helvetica, sans-serif; font-size:17px; text-align=
+:center; color:#445578; line-height:22px; font-weight:400;">Hi Rajani,</td>
+                            </tr>
+                            <tr>
+                             <td height=3D"4"></td>
+                            </tr>
+                            <tr>
+                             <td align=3D"center">
+                              <table border=3D"0" align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0">
+                               <tbody>
+                                <tr>
+                                 <td width=3D"390" class=3D"h1" align=3D"ce=
+nter" style=3D"font-family:'Roboto Slab', Arial, Helvetica, sans-serif; fon=
+t-size:23px; text-align:center; color:#1B2437; font-weight:700; line-height=
+:30px;">1 Recruiter(s) have recently shown interest in your profile</td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                            <tr>
+                             <td height=3D"23"></td>
+                            </tr>
+                            <tr>
+                             <td valign=3D"top" align=3D"center">
+                              <table style=3D"border-collapse:collapse; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 50px; color:#ffff=
+ff;" width=3D"122" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" bgc=
+olor=3D"#457EFF">
+                               <tbody>
+                                <tr>
+                                 <td width=3D"6"></td>
+                                 <td valign=3D"middle" height=3D"40" align=
+=3D"center"><a href=3D"https://cm.naukri.com?data=3D%7B%22deviceType%22%3A%=
+22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%=
+2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%2C%22clickPosition=
+%22%3A4%2C%22communicationType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_=
+20251021%22%2C%22userId%22%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe=
+33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%221866_rvmchannelaffinity_rvm=
+channelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb57=
+52714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mail=
+Type%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%22741038%22%2C%22segmen=
+tId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22p=
+arentActivityId%22%3A%22607252%22%2C%22eventName%22%3A%22communicationClick=
+%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Fww=
+w.naukri.com%2Fmnjuser%2Fperformance%3Futm_campaign%3Drvm%26utm_medium%3Dem=
+ail%26utm_source%3Dviewdetails%26utm_content%3D1866_rvmchannelaffinity_rvmc=
+hannelaffinity_start_1a86%26utm_term%3D741038" target=3D"_blank" style=3D"f=
+ont-family:'Roboto', Arial, Helvetica, sans-serif; text-decoration:none; fo=
+nt-size:15px; display:block; text-align:center; color:#ffffff; font-weight:=
+500;  line-height:40px;">View details</a></td>
+                                 <td width=3D"6"></td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+  <tr>
+                                       <td height=3D"10"></td>
+                                    </tr>
+  <!-- mail widget start -->
+                                    <tr>
+                                      <td>
+<div>
+
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0, maximum-scale=3D1.0, user-scalable=3Dno">
+<link href=3D"https://fonts.googleapis.com/css2?family=3DRoboto:wght@300;40=
+0;500;700;900&amp;display=3Dswap" rel=3D"stylesheet">
+
+
+
+<table cellspacing=3D"0" cellpadding=3D"0" style=3D"max-width:600px; border=
+-radius:2px; border:1px solid #F0F5FE;" align=3D"left">
+
+ =20
+  <!--Video Widgets Start-->
+    <tbody><tr>
+    <td valign=3D"top" align=3D"center" width=3D"600">
+   <a href=3D"https://cm.naukri.com?data=3D%7B%22widgetSequence%22%3A1%2C%2=
+2deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab8c395b9c1c638s8=
+ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22mail-video-profi=
+le-parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22label%22%3A%22submi=
+t%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22%3A%22secti=
+on-2%22%2C%22actionType%22%3A%22click%22%2C%22encUsername%22%3A%220c32bd9c6=
+69820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%=
+2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C%22tenantId%22%=
+3A1%2C%22eventName%22%3A%22nonSessionizedWidgetClick%22%2C%22widgetNameStri=
+ng%22%3A%22mail-video-profile-parent-wdgt%22%2C%22lang%22%3A%22en%22%2C%22a=
+ctionSrc%22%3A%22inventorySystem%22%7D&amp;redirect=3Dhttps%3A%2F%2Fr5rx5.a=
+pp.goo.gl%2FkDEo" data-label=3D"submit" target=3D"_blank" style=3D"text-dec=
+oration:none; display:block; color:#282D3F;">
+      <table width=3D"90%" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0">
+  <tbody><tr>
+    <td height=3D"20"></td>
+  </tr>
+  <tr>
+    <td valign=3D"top" align=3D"left">
+    <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" width=3D"95=
+%">
+      <tbody><tr>
+       <td width=3D"7"></td>
+        <td valign=3D"top" align=3D"left">
+        <a href=3D"https://cm.naukri.com?data=3D%7B%22widgetSequence%22%3A1=
+%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab8c395b9c1c=
+638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22mail-video-=
+profile-parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22label%22%3A%22=
+submit%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22%3A%22=
+section-2%22%2C%22actionType%22%3A%22click%22%2C%22encUsername%22%3A%220c32=
+bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d979=
+4%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C%22tenantI=
+d%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetClick%22%2C%22widgetNam=
+eString%22%3A%22mail-video-profile-parent-wdgt%22%2C%22lang%22%3A%22en%22%2=
+C%22actionSrc%22%3A%22inventorySystem%22%7D&amp;redirect=3Dhttps%3A%2F%2Fr5=
+rx5.app.goo.gl%2FkDEo" data-label=3D"submit" target=3D"_blank" style=3D"tex=
+t-decoration:none; display:block;">
+        <img src=3D"http://www.ieplads.com/mailers/2021/naukri/15jan/images=
+/video.png" width=3D"100%" style=3D"width:100%; max-width:117px;"></a></td>
+        <td width=3D"10"></td>
+        <td valign=3D"middle" align=3D"left">
+        <table width=3D"100%" align=3D"left" cellpadding=3D"0" cellspacing=
+=3D"0">
+     =20
+  <tbody><tr>
+    <td align=3D"left" style=3D"font-family:'Roboto', Arial, Helvetica, san=
+s-serif; font-size:14px; line-height:18px; text-align:left; font-weight:500=
+; color:#282D3F;"><a href=3D"https://cm.naukri.com?data=3D%7B%22widgetSeque=
+nce%22%3A1%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab=
+8c395b9c1c638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22m=
+ail-video-profile-parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22labe=
+l%22%3A%22submit%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionNam=
+e%22%3A%22section-2%22%2C%22actionType%22%3A%22click%22%2C%22encUsername%22=
+%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05=
+ee52a8d9794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C=
+%22tenantId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetClick%22%2C%2=
+2widgetNameString%22%3A%22mail-video-profile-parent-wdgt%22%2C%22lang%22%3A=
+%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D&amp;redirect=3Dhttps%=
+3A%2F%2Fr5rx5.app.goo.gl%2FkDEo" data-label=3D"submit" target=3D"_blank" st=
+yle=3D"text-decoration:none; display:block; color:#282D3F;">Get faster recr=
+uiter action by switching to Video Profile</a> </td>
+  </tr>
+  <tr>
+    <td height=3D"3"></td>
+  </tr>
+  <tr>
+    <td align=3D"left" style=3D"font-family:'Roboto', Arial, Helvetica, san=
+s-serif; font-size:13px; line-height:16px; text-align:left; font-weight:500=
+; color:#4A90E2;"><a href=3D"https://cm.naukri.com?data=3D%7B%22widgetSeque=
+nce%22%3A1%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab=
+8c395b9c1c638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22m=
+ail-video-profile-parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22labe=
+l%22%3A%22submit%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionNam=
+e%22%3A%22section-2%22%2C%22actionType%22%3A%22click%22%2C%22encUsername%22=
+%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05=
+ee52a8d9794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2C=
+%22tenantId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetClick%22%2C%2=
+2widgetNameString%22%3A%22mail-video-profile-parent-wdgt%22%2C%22lang%22%3A=
+%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D&amp;redirect=3Dhttps%=
+3A%2F%2Fr5rx5.app.goo.gl%2FkDEo" data-label=3D"submit" target=3D"_blank" st=
+yle=3D"text-decoration:none; color:#4A90E2; display:block;">Explore on Nauk=
+ri app</a></td>
+  </tr>
+</tbody></table>
+</td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td height=3D"20"></td>
+  </tr>
+</tbody></table>
+
+</a>
+
+</td>
+    </tr>
+    <!--Video Widgets End-->
+   =20
+   =20
+  =20
+    </tbody></table>
+   =20
+
+                                                </div>
+                                      </td>
+                                    </tr>
+                                    <!-- mail widget ends -->
+                            <tr>
+                             <td height=3D"36"></td>
+                            </tr>
+                            <tr>
+                             <td align=3D"center">
+                              <table border=3D"0" align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0">
+                               <tbody>
+                                <tr>
+                                 <td width=3D"460" align=3D"center">
+                                  <table width=3D"100%" border=3D"0" align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" align=3D"center"=
+ style=3D"font-family:'Roboto', Arial, Helvetica, sans-serif; font-size:19p=
+x; line-height:20px; text-align:center; font-weight:700; color:#1B2437;">He=
+re's a summary of your profile</td>
+                                    </tr>
+                                    <tr>
+                                     <td height=3D"4"></td>
+                                    </tr>
+                                    <tr>
+                                     <td class=3D"mnbd_txt" valign=3D"middl=
+e" align=3D"center" style=3D"font-family:'Roboto', Arial, Helvetica, sans-s=
+erif; font-size:15px; line-height:21px; text-align:center; font-weight:400;=
+ color:#8292B4;">Recruiters prefer profiles with complete information</td>
+                                    </tr>
+                                   =20
+                                       =20
+                                    <tr>
+                                     <td height=3D"35"></td>
+                                    </tr>
+                                    <tr>
+                                     <td>
+                                      <table width=3D"100%" border=3D"0" al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"  mso-table-lsp=
+ace:0pt; mso-table-rspace:0pt;">
+                                       <tbody>
+                                        <tr>
+                                         <td bgcolor=3D"#F5F6F9" style=3D"b=
+order: 1px solid #EAF1F5; border-bottom:none; border-top-left-radius:10px; =
+border-top-right-radius:10px;">
+                                          <table width=3D"95%" border=3D"0"=
+ align=3D"right" cellpadding=3D"0" cellspacing=3D"0">
+                                           <tbody>
+                                           =20
+                                           </tbody>
+                                          </table></td>
+                                        </tr>
+                                        <tr>
+                                         <td bgcolor=3D"#F5F6F9">
+                                          <table width=3D"100%" border=3D"0=
+" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ffffff" =
+style=3D"border-top-left-radius:10px; border-top-right-radius:10px;">
+                                           <tbody>
+                                            <tr>
+                                             <td valign=3D"top" align=3D"ce=
+nter" style=3D"border: 1px solid #EAF1F5; border-bottom-left-radius:10px; b=
+order-bottom-right-radius:10px; border-top:none;">
+                                              <table width=3D"91%" border=
+=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                               <tbody>
+                                                     <!-- new text -->
+                                                    =20
+                                                      <tr>
+                                                 <td height=3D"24"></td>
+                                                </tr>
+<tr>
+                                      <td width=3D"80" valign=3D"top" align=
+=3D"center">
+                                        <table cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" align=3D"center">
+                                          <tbody><tr>
+                                            <td valign=3D"middle" align=3D"=
+center"><table width=3D"80" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" align=3D"center">
+                                              <tbody>
+                                                <tr>
+                                                <td width=3D"8"></td>
+                                                  <td>
+                                                    <table width=3D"60" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+                                                      <tbody>
+                                                         <tr>
+                                                             <td style=3D"b=
+ackground-repeat:no-repeat;" width=3D"54" height=3D"50" background=3D"https=
+://www.ieplads.com/mailers/2021/naukri/6april/images/percentage/100percent.=
+png">
+                                                              <table style=
+=3D"border-radius:100px" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" a=
+lign=3D"center">
+                                                               <tbody>
+                                                               <tr>
+<td height=3D"8" align=3D"center">
+</td>
+</tr>
+                                                                <tr>
+                                                                 <td style=
+=3D"border-radius:100px;" align=3D"center" valign=3D"middle">
+                                                                  <div alig=
+n=3D"center">
+                                                                   <img src=
+=3D"https://p.naukimg.com/jphoto/s1198a3a7459c00aa243e8bfc2f9dabb3ce0403598=
+4e1ff934f5c43b7ec47c88331" width=3D"38" height=3D"38" style=3D"border-radiu=
+s:100px;">
+                                                                  </div></t=
+d>
+                                                                  <td width=
+=3D"5"></td>
+                                                                </tr>
+                                                               </tbody>
+                                                              </table> </td=
+>
+                                                            </tr>
+                                                        </tbody>
+                                                      </table> </td>
+                                                =20
+                                                  </tr>
+                                                </tbody>
+                                              </table></td>
+                                            </tr>
+                                          <tr>
+                                            <td height=3D"3"></td>
+                                            </tr>
+                                          <tr>
+                                            <td align=3D"center"><table sty=
+le=3D"border-radius:100px;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" bgcolor=3D"#E8F9F6" align=3D"center">
+                                              <tbody><tr>
+                                                <td width=3D"9" height=3D"2=
+2"></td>
+                                                <td class=3D"mnbd_txt" styl=
+e=3D"font-family:'Roboto', Arial, Helvetica, sans-serif; font-size:14px; li=
+ne-height:15px; text-align:center; font-weight:500; color:#18C1A3;" align=
+=3D"center">100%</td>
+                                                <td width=3D"9"></td>
+                                                </tr>
+                                              </tbody></table>
+                                              </td>
+                                            </tr>
+                                          </tbody></table>
+                                        </td>
+                                    </tr>
+                                   =20
+                                    <!-- new text ends -->
+                                                <tr>
+                                                 <td height=3D"24"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td class=3D"job_nm" valig=
+n=3D"middle" align=3D"center" style=3D"font-family:'Inter', Arial, Helvetic=
+a, sans-serif; font-size:17px; line-height:22px; text-align:center; font-we=
+ight:700; color:#1B2437;">Rajani Priya</td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"2"></td>
+                                                </tr>
+                                                <tr>
+                                                  =20
+                                                 <td class=3D"mnbd_txt" val=
+ign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, Helvetica,=
+ sans-serif; font-size:15px; line-height:20px; text-align:left; font-weight=
+:500; color:#457EFF;"><a href=3D"https://cm.naukri.com?data=3D%7B%22deviceT=
+ype%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%=
+221933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%2C%22cli=
+ckPosition%22%3A9%2C%22communicationType%22%3A%22mail%22%2C%22journeyId%22%=
+3A%221866_20251021%22%2C%22userId%22%3A%220f323398f79a693f8f7119186d98a42f6=
+007e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%221866_rvmchannelaf=
+finity_rvmchannelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c=
+669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22=
+%2C%22mailType%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%22741038%22%2=
+C%22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221=
+%22%2C%22parentActivityId%22%3A%22607252%22%2C%22eventName%22%3A%22communic=
+ationClick%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%=
+3A%2F%2Fwww.naukri.com%2Fmnjuser%2Fprofile%3F%26utm_campaign%3Drvm%26utm_me=
+dium%3Demail%26utm_source%3Dadddesignationorganization%26utm_content%3D1866=
+_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" styl=
+e=3D"text-decoration:none;">Add designation/organization</a></td> =20
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"16"></td>
+                                                </tr>
+                                                <tr>
+                                                  =20
+                                                 <td class=3D"mnbd_txt" val=
+ign=3D"middle" align=3D"center" style=3D"font-family:'Roboto', Arial, Helve=
+tica, sans-serif; font-size:15px; line-height:20px; text-align:center; font=
+-weight:400; color:#445578;"> SUMMARY A hard-working and responsible indivi=
+dual seeking a job. I am a quick learner &amp; put all the efforts to lea..=
+.
+</td> =20
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"30"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td align=3D"center">
+                                                  <table width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                   <tbody>
+                                                    <tr>
+                                                     <td valign=3D"top" ali=
+gn=3D"center">
+                                                      <table width=3D"100%"=
+ border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                                       <tbody>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" width=3D"32%" valign=3D"top" align=3D"left" style=3D"font-family:'Robo=
+to', Arial, Helvetica, sans-serif; font-size:15px; line-height:20px; text-a=
+lign:left; font-weight:700; color:#445578;">Pref role</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09 =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">Teaching Staff</td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" width=3D"32%" valign=3D"top" align=3D"left" style=3D"font-family:'Robo=
+to', Arial, Helvetica, sans-serif; font-size:15px; line-height:20px; text-a=
+lign:left; font-weight:700; color:#445578;">Pref salary</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09      =20
+                                                          <td class=3D"mnbd=
+_txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, H=
+elvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fo=
+nt-weight:400; color:#445578;"> INR 5 Lakh(s)  </td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Pref location</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">Secunderabad</td> =20
+                                                        </tr>
+                                                       </tbody>
+                                                      </table></td>
+                                                    </tr>
+                                                   </tbody>
+                                                  </table> </td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"20"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"1" bgcolor=
+=3D"#ECF1F8"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"20"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td align=3D"center">
+                                                  <table width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                   <tbody>
+                                                    <tr>
+                                                     <td valign=3D"top" ali=
+gn=3D"center">
+                                                      <table width=3D"100%"=
+ border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                                       <tbody>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" width=3D"32%" valign=3D"top" align=3D"left" style=3D"font-family:'Robo=
+to', Arial, Helvetica, sans-serif; font-size:15px; line-height:20px; text-a=
+lign:left; font-weight:700; color:#445578;">Phone </td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">9177511362</td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Email</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">kolarp3003@gmail.com</td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Total exp</td>  =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">0.5 Year(s)</td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Salary</td>     =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;"> INR 1 Lakh(s)   20 Thousand </td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Location</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">Hyderabad</td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"middle" align=3D"left" style=3D"font-family:'Roboto', Arial,=
+ Helvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; =
+font-weight:500; color:#445578;"> </td>
+                                                         <td valign=3D"midd=
+le" align=3D"left" style=3D"font-family:'Roboto', Arial, Helvetica, sans-se=
+rif; font-size:15px; line-height:20px; text-align:left; font-weight:400; cl=
+ass=3D" mnbd_txt" color:#445578;"> </td>
+                                                        </tr>
+                                                       </tbody>
+                                                      </table></td>
+                                                    </tr>
+                                                   </tbody>
+                                                  </table> </td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"20"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"1" bgcolor=
+=3D"#ECF1F8"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"20"></td>
+                                                </tr>
+                                                <tr>
+                                                 <td align=3D"center">
+                                                  <table width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                   <tbody>
+                                                    <tr>
+                                                     <td valign=3D"top" ali=
+gn=3D"center">
+                                                      <table width=3D"100%"=
+ border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                                       <tbody>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" width=3D"32%" valign=3D"top" align=3D"left" style=3D"font-family:'Robo=
+to', Arial, Helvetica, sans-serif; font-size:15px; line-height:20px; text-a=
+lign:left; font-weight:700; color:#445578;">Current emp</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:500; color:#457EFF;"><a href=3D"https://cm.naukri.com?data=3D%7B%2=
+2deviceType%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignI=
+d%22%3A%221933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%=
+2C%22clickPosition%22%3A10%2C%22communicationType%22%3A%22mail%22%2C%22jour=
+neyId%22%3A%221866_20251021%22%2C%22userId%22%3A%220f323398f79a693f8f711918=
+6d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%221866_rvm=
+channelaffinity_rvmchannelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%2=
+20c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a=
+8d9794%22%2C%22mailType%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%2274=
+1038%22%2C%22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22tenantId%=
+22%3A%221%22%2C%22parentActivityId%22%3A%22607252%22%2C%22eventName%22%3A%2=
+2communicationClick%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp;redirect=
+=3Dhttps%3A%2F%2Fwww.naukri.com%2Fmnjuser%2Fprofile%3F%26utm_campaign%3Drvm=
+%26utm_medium%3Demail%26utm_source%3Daddcurrentemployment%26utm_content%3D1=
+866_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" s=
+tyle=3D"text-decoration:none;">Add current employment</a></td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Previous emp</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">Teacher and Trainer  at  Master Minds School<=
+/td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Highest edu.</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;"> MSc/forensic Science  - Osmania University, =
+Hyderabad 2025 </td> =20
+                                                        </tr>
+                                                        <tr>
+                                                         <td colspan=3D"2" =
+height=3D"10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:700; color:#445578;">Key skills</td> =20
+                                                         <td class=3D"mnbd_=
+txt" valign=3D"top" align=3D"left" style=3D"font-family:'Roboto', Arial, He=
+lvetica, sans-serif; font-size:15px; line-height:20px; text-align:left; fon=
+t-weight:400; color:#445578;">Forensic Investigations, assistant professor,=
+ Digital Forensics, Science Teaching, DNA Isolation, Zoology, Life Sciences=
+</td> =20
+                                                        </tr>
+                                                       </tbody>
+                                                      </table></td>
+                                                    </tr>
+                                                   </tbody>
+                                                  </table> </td>
+                                                </tr>
+                                                <tr>
+                                                 <td height=3D"30"></td>
+                                                </tr>
+                                               </tbody>
+                                              </table> </td>
+                                            </tr>
+                                           </tbody>
+                                          </table></td>
+                                        </tr>
+                                       </tbody>
+                                      </table></td>
+                                    </tr>
+                                    <tr>
+                                     <td height=3D"16"></td>
+                                    </tr>
+                                    <tr>
+                                     <td align=3D"center" style=3D"border-r=
+adius: 12px 6px; border: 1px solid #F8EAB7;">
+                                      <table width=3D"93%" border=3D"0" ali=
+gn=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+                                       <tbody>
+                                        <tr>
+                                         <td align=3D"center">
+                                          <table border=3D"0" align=3D"cent=
+er" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrapper">
+                                           <tbody>
+                                            <tr>
+                                             <td height=3D"18" class=3D"gap=
+"></td>
+                                            </tr>
+                                            <tr>
+                                             <td align=3D"center" valign=3D=
+"middle">
+                                              <table width=3D"95%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrapper">
+                                               <tbody>
+                                                <tr>
+                                                 <td valign=3D"middle" alig=
+n=3D"left" width=3D"44"><img src=3D"https://www.ieplads.com/mailers/2022/na=
+ukri/WHTMA-23aug/images/protip.png" width=3D"34" alt=3D""></td>
+                                                 <td class=3D"body_txt" val=
+ign=3D"middle" align=3D"left" style=3D"font-family:'Roboto', Arial, Helveti=
+ca, sans-serif; font-size:13px; line-height:18px; text-align:left; color:#4=
+45578;"><strong>Pro Tip:</strong> You last updated your profile on <strong>=
+2025-10-06</strong>. Recruiters view recently updated profiles first!</td>
+                                                </tr>
+                                               </tbody>
+                                              </table></td>
+                                            </tr>
+                                            <tr>
+                                             <td height=3D"18" class=3D"gap=
+"></td>
+                                            </tr>
+                                           </tbody>
+                                          </table> </td>
+                                        </tr>
+                                       </tbody>
+                                      </table></td>
+                                    </tr>
+                                    <tr>
+                                     <td height=3D"24"></td>
+                                    </tr>
+                                    <tr>
+                                     <td valign=3D"top" align=3D"center">
+                                      <table style=3D"border-collapse:colla=
+pse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 50px; col=
+or:#ffffff;" width=3D"135" cellspacing=3D"0" cellpadding=3D"0" align=3D"cen=
+ter" bgcolor=3D"#457EFF">
+                                       <tbody>
+                                        <tr>
+                                         <td width=3D"6"></td>
+                                         <td valign=3D"middle" height=3D"40=
+" align=3D"center"><a href=3D"https://cm.naukri.com?data=3D%7B%22deviceType=
+%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%221=
+933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%2C%22clickP=
+osition%22%3A11%2C%22communicationType%22%3A%22mail%22%2C%22journeyId%22%3A=
+%221866_20251021%22%2C%22userId%22%3A%220f323398f79a693f8f7119186d98a42f600=
+7e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%221866_rvmchannelaffi=
+nity_rvmchannelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c66=
+9820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2=
+C%22mailType%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%22741038%22%2C%=
+22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221%2=
+2%2C%22parentActivityId%22%3A%22607252%22%2C%22eventName%22%3A%22communicat=
+ionClick%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A=
+%2F%2Fwww.naukri.com%2Fmnjuser%2Fprofile%3F%26utm_campaign%3Drvm%26utm_medi=
+um%3Demail%26utm_source%3Dupdateprofile%26utm_content%3D1866_rvmchannelaffi=
+nity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" target=3D"_blank" s=
+tyle=3D"font-family:'Roboto', Arial, Helvetica, sans-serif; text-decoration=
+:none; font-size:15px; display:block; text-align:center; color:#ffffff; fon=
+t-weight:500;  line-height:40px;">Update profile</a></td>
+                                         <td width=3D"6"></td>
+                                        </tr>
+                                       </tbody>
+                                      </table></td>
+                                    </tr>
+  <tr>
+                                       <td height=3D"10"></td>
+                                    </tr><!-- mail widget start -->
+                                    <tr>
+                                      <td>
+
+                                      </td>
+                                    </tr>
+                                    <!-- mail widget ends -->
+                                   </tbody>
+                                  </table> </td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                            <tr>
+                             <td height=3D"32"></td>
+                            </tr>
+                            <tr>
+                              </tr><tr> <td align=3D"center"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"center"> <tbody> <tr> <td valign=3D"=
+top" bgcolor=3D"#EDF4FF" align=3D"center" width=3D"460"> <table width=3D"10=
+0%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" bgcolor=3D"#F2FCFF=
+"> <tbody> <tr> <td width=3D"4%"></td><td valign=3D"top" align=3D"center"> =
+<table style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspac=
+e:0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=
+=3D"center"> <tbody> <tr> <td valign=3D"top" height=3D"18"></td></tr><tr> <=
+td valign=3D"top"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" align=3D"center"> <tbody> <tr> <td valign=3D"top" align=3D"l=
+eft"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" align=3D"left"> <tbody> <tr> <td height=3D"8"></td></tr><tr> <td valign=
+=3D"top" align=3D"left"> <table border=3D"0" align=3D"left" cellpadding=3D"=
+0" cellspacing=3D"0"> <tbody> <tr> <td width=3D"202" style=3D"font-family:'=
+Roboto',Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;text-ali=
+gn:left;color:#1b2437;font-weight:700" valign=3D"top" align=3D"left"> Appli=
+es are a click away on the Naukri app </td></tr></tbody> </table> </td></tr=
+><tr> <td height=3D"6"></td></tr><tr> <td align=3D"left"> <table style=3D"b=
+order-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0" width=3D"100=
+%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left"> <tbody>=
+ <tr> <td height=3D"18" align=3D"left"> <table style=3D"border-collapse:col=
+lapse;mso-table-lspace:0;mso-table-rspace:0" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" align=3D"left"> <tbody> <tr> <td style=3D"font-family:'=
+Roboto',Arial,Helvetica,sans-serif;font-size:13px;text-align:left;color:#44=
+5578;vertical-align:middle;font-weight:400" valign=3D"middle" align=3D"left=
+"> Available on </td><td width=3D"10"> </td><td align=3D"left"> <a data-lab=
+el=3D"get-app" href=3D"https://cm.naukri.com?data=3D%7B%22widgetSequence%22=
+%3A1%2C%22deviceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab8c395b=
+9c1c638s8ixj%22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22install=
+-app-qr-mail-parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22label%22%=
+3A%22get-app%22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22=
+%3A%22know-your-worth-install-app%22%2C%22actionType%22%3A%22click%22%2C%22=
+encUsername%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f=
+7cad1d6f208b05ee52a8d9794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%=
+3A%22456%22%2C%22tenantId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidge=
+tClick%22%2C%22widgetNameString%22%3A%22install-app-qr-mail-parent-wdgt%22%=
+2C%22lang%22%3A%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D&amp;re=
+direct=3Dhttps%3A%2F%2Fwww.naukri.com%2Fdurl%2FnEZb" target=3D"_blank"> <im=
+g src=3D"https://www.ieplads.com/mailers/2022/naukri/23may/images/playstore=
+-icon.png" style=3D"text-decoration:none;color:#429ffc" width=3D"39" border=
+=3D"0" align=3D"absmiddle"></a> </td></tr></tbody> </table> </td></tr><tr> =
+<td height=3D"15"> </td></tr><tr> <td align=3D"left"> <table style=3D"borde=
+r-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border-radius:50p=
+x" width=3D"81" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FF7555" ali=
+gn=3D"left"> <tbody> <tr> <td width=3D"5"> </td><td style=3D"color:#fff;tex=
+t-decoration:none" height=3D"32" align=3D"center"> <a data-label=3D"get-app=
+" href=3D"https://cm.naukri.com?data=3D%7B%22widgetSequence%22%3A1%2C%22dev=
+iceType%22%3A%22WEB%22%2C%22eventId%22%3A%2268f79d367eab8c395b9c1c638s8ixj%=
+22%2C%22systemId%22%3A%22ni%22%2C%22widgetName%22%3A%22install-app-qr-mail-=
+parent-wdgt%22%2C%22widgetVersion%22%3A%22v0%22%2C%22label%22%3A%22get-app%=
+22%2C%22pageName%22%3A%22ni-mail-rvm-v0%22%2C%22sectionName%22%3A%22know-yo=
+ur-worth-install-app%22%2C%22actionType%22%3A%22click%22%2C%22encUsername%2=
+2%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b0=
+5ee52a8d9794%22%2C%22mailerId%22%3A%22741038%22%2C%22appId%22%3A%22456%22%2=
+C%22tenantId%22%3A1%2C%22eventName%22%3A%22nonSessionizedWidgetClick%22%2C%=
+22widgetNameString%22%3A%22install-app-qr-mail-parent-wdgt%22%2C%22lang%22%=
+3A%22en%22%2C%22actionSrc%22%3A%22inventorySystem%22%7D&amp;redirect=3Dhttp=
+s%3A%2F%2Fwww.naukri.com%2Fdurl%2FnEZb" target=3D"_blank" style=3D"font-fam=
+ily:'Roboto',Arial,Helvetica,sans-serif;text-decoration:none;font-size:13px=
+;display:block;text-align:center;color:#fff;font-weight:700;line-height:32p=
+x">Get App</a> </td><td width=3D"5"> </td></tr></tbody> </table> </td></tr>=
+</tbody> </table> </td></tr></tbody> </table> </td><td valign=3D"top" align=
+=3D"right"> <table width=3D"95" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" align=3D"right"> <tbody> <tr> <td height=3D"3"></td></tr><tr> <td al=
+ign=3D"center"> <table style=3D"border:1px solid #c3f0ff;border-radius:6px"=
+ width=3D"94" height=3D"94" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" bgcolor=3D"#FFFFFF" align=3D"center"> <tbody> <tr> <td height=3D"1"></td>=
+</tr><tr> <td align=3D"center"> <img src=3D"https://www.ieplads.com/mailers=
+/2025_ui/naukri/naukri-qr-code/qr3.png" width=3D"78" height=3D"78"> </td></=
+tr></tbody> </table> </td></tr><tr> <td height=3D"4" bgcolor=3D"#F2FCFF"> <=
+/td></tr><tr> <td style=3D"font-family:'Roboto',Arial,Helvetica,sans-serif;=
+font-size:11px;line-height:20px;text-align:center;color:#8292b4" valign=3D"=
+top" bgcolor=3D"#F2FCFF" align=3D"center">Scan to download </td></tr></tbod=
+y> </table> </td></tr></tbody> </table> </td></tr><tr> <td valign=3D"top" h=
+eight=3D"20"></td></tr></tbody> </table> </td><td width=3D"4%"></td></tr></=
+tbody> </table> </td></tr></tbody> </table> </td></tr>
+                           =20
+
+                            <tr>
+                             <td height=3D"26"></td>
+                            </tr>
+                            <tr>
+                             <td align=3D"center">
+                              <table cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"center">
+                               <tbody>
+                                <tr>
+                                 <td width=3D"18" align=3D"center"> <a href=
+=3D"https://cm.naukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22addit=
+ionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationI=
+d%22%3A%2268f79e543152f1aacf5b530d%22%2C%22clickPosition%22%3A14%2C%22commu=
+nicationType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22u=
+serId%22%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49=
+177%22%2C%22eventCode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_st=
+art_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aed=
+bc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_p=
+romotional%22%2C%22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070=
+%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22=
+%3A%22607252%22%2C%22eventName%22%3A%22communicationClick%22%2C%22parentJou=
+rneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.facebook.com%2FN=
+aukri%2F%3Futm_campaign%3Drvm-whtcv%26utm_medium%3Demail%26utm_content%3D18=
+66_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" st=
+yle=3D"text-decoration:none; color:#4b69b0;" target=3D"_blank"> <img src=3D=
+"https://www.ieplads.com/mailers/2021/naukri/call-intent-mailer/images/fb.p=
+ng" alt=3D"Facebook" style=3D"font-family:'Roboto', Arial; font-weight:400;=
+ text-align:center; font-size:11px; color:#4b69b0; line-height:13px;" width=
+=3D"21"></a></td>
+                                 <td width=3D"6"></td>
+                                 <td width=3D"18" align=3D"center"> <a href=
+=3D"https://cm.naukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22addit=
+ionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationI=
+d%22%3A%2268f79e543152f1aacf5b530d%22%2C%22clickPosition%22%3A15%2C%22commu=
+nicationType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22u=
+serId%22%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49=
+177%22%2C%22eventCode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_st=
+art_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aed=
+bc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_p=
+romotional%22%2C%22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070=
+%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22=
+%3A%22607252%22%2C%22eventName%22%3A%22communicationClick%22%2C%22parentJou=
+rneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Ftwitter.com%2FNaukri=
+%3Futm_campaign%3Drvm-whtcv%26utm_medium%3Demail%26utm_content%3D1866_rvmch=
+annelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" style=3D"t=
+ext-decoration:none; color:#37b1e1;" target=3D"_blank"> <img src=3D"https:/=
+/www.ieplads.com/mailers/2022/naukri/23may/images/twitter.png" alt=3D"Twitt=
+er" style=3D"font-family:'Roboto', Arial; font-weight:400; text-align:cente=
+r; font-size:11px; color:#37b1e1; line-height:13px;" width=3D"21"></a></td>
+                                 <td width=3D"6"></td>
+                                 <td width=3D"18" align=3D"center"> <a href=
+=3D"https://cm.naukri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22addit=
+ionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationI=
+d%22%3A%2268f79e543152f1aacf5b530d%22%2C%22clickPosition%22%3A16%2C%22commu=
+nicationType%22%3A%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22u=
+serId%22%3A%220f323398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49=
+177%22%2C%22eventCode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_st=
+art_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aed=
+bc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_p=
+romotional%22%2C%22mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070=
+%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22=
+%3A%22607252%22%2C%22eventName%22%3A%22communicationClick%22%2C%22parentJou=
+rneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.instagram.com%2F=
+naukridotcom%2F%3Fhl%3Den%26utm_campaign%3Drvm-whtcv%26utm_medium%3Demail%2=
+6utm_content%3D1866_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_=
+term%3D741038" style=3D"text-decoration:none; color:#7a4b9a;" target=3D"_bl=
+ank"> <img src=3D"https://www.ieplads.com/mailers/2021/naukri/call-intent-m=
+ailer/images/insta.png" alt=3D"Instagram" style=3D"font-family:'Roboto', Ar=
+ial; font-weight:400; text-align:center; font-size:11px; color:#7a4b9a; lin=
+e-height:13px;" width=3D"21"></a></td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                            <tr>
+                             <td height=3D"16"></td>
+                            </tr>
+                            <tr>
+                             <td valign=3D"top" align=3D"center">
+                              <table cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"center">
+                               <tbody>
+                                <tr>
+                                 <td style=3D"font-family:'Roboto', Arial; =
+text-align:center; font-size:11px; line-height:12px; color:#8292B4; font-we=
+ight:400;" valign=3D"top" align=3D"center"><a href=3D"https://cm.naukri.com=
+?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2=
+C%22campaignId%22%3A%221933%22%2C%22communicationId%22%3A%2268f79e543152f1a=
+acf5b530d%22%2C%22clickPosition%22%3A17%2C%22communicationType%22%3A%22mail=
+%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%22%3A%220f323398f79=
+a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%=
+3A%221866_rvmchannelaffinity_rvmchannelaffinity_start_1a86_mail%22%2C%22enc=
+Email%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d=
+6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promotional%22%2C%22mailer=
+Id%22%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2=
+C%22tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%22607252%22%2C%22even=
+tName%22%3A%22communicationClick%22%2C%22parentJourneyId%22%3A%221866%22%7D=
+&amp;redirect=3Dhttps%3A%2F%2Fwww.naukri.com%2Fmnjuser%2Fsettings%2Fcommuni=
+cation%3Futm_campaign%3Drvm%26utm_medium%3Demail%26utm_source%3Dunsubscribe=
+%26utm_content%3D1866_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26ut=
+m_term%3D741038" style=3D"color:#8292B4; text-decoration:none;" target=3D"_=
+blank">Unsubscribe</a></td>
+                                 <td style=3D"font-family:'Roboto', Arial; =
+text-align:center; font-size:10px; line-height:12px; color:#8292B4; font-we=
+ight:400;" width=3D"15" height=3D"12" align=3D"center">|</td>
+                                 <td style=3D"font-family:'Roboto', Arial; =
+text-align:left; font-size:11px; line-height:12px; color:#8292B4; font-weig=
+ht:400;" valign=3D"top" align=3D"left"><a href=3D"https://cm.naukri.com?dat=
+a=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22=
+campaignId%22%3A%221933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5=
+b530d%22%2C%22clickPosition%22%3A18%2C%22communicationType%22%3A%22mail%22%=
+2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%22%3A%220f323398f79a693=
+f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%2=
+21866_rvmchannelaffinity_rvmchannelaffinity_start_1a86_mail%22%2C%22encEmai=
+l%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f20=
+8b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promotional%22%2C%22mailerId%2=
+2%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22=
+tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%22607252%22%2C%22eventNam=
+e%22%3A%22communicationClick%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp=
+;redirect=3Dhttps%3A%2F%2Fw5.naukri.com%2Ffdbck%2Fmain%2Ffeedback.php%3Futm=
+_campaign%3Drvm%26utm_medium%3Demail%26utm_source%3Dreport%26utm_content%3D=
+1866_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" =
+style=3D"color:#8292B4; text-decoration:none;" target=3D"_blank">Report a p=
+roblem</a></td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                            <tr>
+                             <td height=3D"15"></td>
+                            </tr>
+                            <tr>
+                             <td align=3D"center">
+                              <table width=3D"90%" border=3D"0" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0">
+                               <tbody>
+                                <tr>
+                                 <td style=3D"font-family:'Roboto', Arial; =
+text-align:center; font-size:10px; line-height:14px; color:#8292B4; font-we=
+ight:400;" valign=3D"top" align=3D"center">You have received this mail beca=
+use your e-mail ID is registered with Naukri<span>.</span>com. This is a sy=
+stem-generated e-mail, please don't reply to this message.</td>
+                                </tr>
+                                <tr>
+                                 <td height=3D"15"></td>
+                                </tr>
+                                <tr>
+                                 <td style=3D"font-family:'Roboto', Arial; =
+text-align:center; font-size:10px; line-height:14px; color:#8292B4; font-we=
+ight:400;" valign=3D"top" align=3D"center">Please do not pay any money to a=
+nyone who promises to find you a job. IEIL shall not have any responsibilit=
+y in this regard. We recommend that you visit our <a href=3D"https://cm.nau=
+kri.com?data=3D%7B%22deviceType%22%3A%22WEB%22%2C%22additionalParams%22%3A%=
+7B%7D%2C%22campaignId%22%3A%221933%22%2C%22communicationId%22%3A%2268f79e54=
+3152f1aacf5b530d%22%2C%22clickPosition%22%3A19%2C%22communicationType%22%3A=
+%22mail%22%2C%22journeyId%22%3A%221866_20251021%22%2C%22userId%22%3A%220f32=
+3398f79a693f8f7119186d98a42f6007e558cbe33cd3cdf3e35370f49177%22%2C%22eventC=
+ode%22%3A%221866_rvmchannelaffinity_rvmchannelaffinity_start_1a86_mail%22%2=
+C%22encEmail%22%3A%220c32bd9c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55=
+f7cad1d6f208b05ee52a8d9794%22%2C%22mailType%22%3A%22mmm_promotional%22%2C%2=
+2mailerId%22%3A%22741038%22%2C%22segmentId%22%3A%22155070%22%2C%22appId%22%=
+3A456%2C%22tenantId%22%3A%221%22%2C%22parentActivityId%22%3A%22607252%22%2C=
+%22eventName%22%3A%22communicationClick%22%2C%22parentJourneyId%22%3A%22186=
+6%22%7D&amp;redirect=3Dhttps%3A%2F%2Fwww.naukri.com%2Ftermsconditions%3Futm=
+_campaign%3Drvm%26utm_medium%3Demail%26utm_source%3Dtnc%26utm_content%3D186=
+6_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3D741038" tar=
+get=3D"_blank" style=3D"text-decoration:none; color:#457EFF;">Terms &amp; C=
+onditions</a> and the <a href=3D"https://cm.naukri.com?data=3D%7B%22deviceT=
+ype%22%3A%22WEB%22%2C%22additionalParams%22%3A%7B%7D%2C%22campaignId%22%3A%=
+221933%22%2C%22communicationId%22%3A%2268f79e543152f1aacf5b530d%22%2C%22cli=
+ckPosition%22%3A20%2C%22communicationType%22%3A%22mail%22%2C%22journeyId%22=
+%3A%221866_20251021%22%2C%22userId%22%3A%220f323398f79a693f8f7119186d98a42f=
+6007e558cbe33cd3cdf3e35370f49177%22%2C%22eventCode%22%3A%221866_rvmchannela=
+ffinity_rvmchannelaffinity_start_1a86_mail%22%2C%22encEmail%22%3A%220c32bd9=
+c669820cb5752714c28b71bba9aedbc8dbcf7b9238aee55f7cad1d6f208b05ee52a8d9794%2=
+2%2C%22mailType%22%3A%22mmm_promotional%22%2C%22mailerId%22%3A%22741038%22%=
+2C%22segmentId%22%3A%22155070%22%2C%22appId%22%3A456%2C%22tenantId%22%3A%22=
+1%22%2C%22parentActivityId%22%3A%22607252%22%2C%22eventName%22%3A%22communi=
+cationClick%22%2C%22parentJourneyId%22%3A%221866%22%7D&amp;redirect=3Dhttps=
+%3A%2F%2Fcompany.naukri.com%2Flanding-page%2Ffakejobtrend%2Fnew%2Findex.htm=
+l%3Futm_campaign%3Drvm%26utm_medium%3Demail%26utm_source%3Dsecurity%26utm_c=
+ontent%3D1866_rvmchannelaffinity_rvmchannelaffinity_start_1a86%26utm_term%3=
+D741038" target=3D"_blank" style=3D"text-decoration:none; color:#457EFF;">S=
+ecurity Advice</a> for more information.</td>
+                                </tr>
+                               </tbody>
+                              </table></td>
+                            </tr>
+                            <tr>
+                             <td height=3D"45"></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table> </td>
+            </tr>
+           </tbody>
+          </table> </td>
+        </tr>
+       </tbody>
+      </table> </td>
+    </tr>
+    <tr>
+     <td valign=3D"top" align=3D"center" height=3D"10"></td>
+    </tr>
+   </tbody>
+  </table>
+=20
+</body></html>
+
+
+
+
+------=_Part_3367119_2040025596.1761058390238--
+------=_Part_3367118_1824497806.1761058390238--
